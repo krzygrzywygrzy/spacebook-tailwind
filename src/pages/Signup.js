@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
+import Cookies from "js-cookie";
 
 /**
  * React FC that renders signup page
@@ -15,26 +16,27 @@ const SignupPage = () => {
   const [, setLocation] = useLocation();
 
   //fetching api endpoint to get cookie jwt token
-  //   const handleLogIn = async () => {
-  //     try {
-  //       const query = await fetch("http://spacebook-web.herokuapp.com/login", {
-  //         method: "post",
-  //         body: JSON.stringify({ login, password }),
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       });
-  //       if (query.status === 200) {
-  //         const data = await query.json();
-  //         Cookies.set("authenticatedUser", data.token, { expires: 3 });
-  //         setLocation("/");
-  //       } else {
-  //         console.log(query.status);
-  //       }
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+  const handleSignUp = async () => {
+    try {
+      const query = await fetch("http://spacebook-web.herokuapp.com/signup", {
+        method: "post",
+        body: JSON.stringify({ fname, surname, email, password, phoneNumber }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (query.status === 201) {
+        const data = await query.json();
+        console.log(data);
+        Cookies.set("authenticatedUser", data.token, { expires: 3 });
+        setLocation("/");
+      } else {
+        console.log(query.status);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="lg:mx-64 mt-3">
@@ -81,7 +83,10 @@ const SignupPage = () => {
           className="block focus:outline-none rounded-md bg-gray-200 p-1  mb-2 px-2 border-2 focus:border-blue-800"
         />
         <div className="flex flex-row items-center">
-          <div className="block focus:outline-none bg-blue-800 w-1/3 text-center py-2 text-white rounded-full cursor-pointer">
+          <div
+            className="block focus:outline-none bg-blue-800 w-1/3 text-center py-2 text-white rounded-full cursor-pointer"
+            onClick={handleSignUp}
+          >
             sign up
           </div>
           <div className="ml-2">
