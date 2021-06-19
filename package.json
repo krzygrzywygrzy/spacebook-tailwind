@@ -17,6 +17,7 @@
     "wouter": "^2.7.4"
   },
   "scripts": {
+    "build:style": "tailwind build src/index.css -o src/tailwind.css",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",

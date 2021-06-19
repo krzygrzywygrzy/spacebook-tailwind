@@ -35,8 +35,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="lg:mx-64 mt-3">
-      <div className="w-96 mb-2 text-blue-800 text-6xl mt-56 select-none subpixel-antialiased font-semibold">
+    <div className="lg:mx-64">
+      <div className="w-96 mb-2 text-blue-800 text-6xl pt-56 select-none subpixel-antialiased font-semibold">
         Get across with people from all over the universe
       </div>
       <div className="w-96 mb-4 text-gray-700">
