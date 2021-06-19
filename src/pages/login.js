@@ -65,7 +65,7 @@ const LoginPage = () => {
             log in
           </div>
           <div className="ml-2">
-            <Link href="/register">no account?</Link>
+            <Link href="/signup">no account?</Link>
           </div>
         </div>
       </div>

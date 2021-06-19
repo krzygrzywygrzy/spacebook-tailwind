@@ -16,6 +16,7 @@ const useSearch = (phrase) => {
 
       if (res.status === 201) {
         const resData = await res.json();
+        console.log(resData);
         setData(resData);
       } else {
         console.log("Error " + res.status);

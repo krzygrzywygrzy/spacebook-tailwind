@@ -1,6 +1,7 @@
 import { Route } from "wouter";
 import HomePage from "./pages/Home";
 import LoginPage from "./pages/Login";
+import SignupPage from "./pages/Signup";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       </Route>
       <Route path="/login">
         <LoginPage />
+      </Route>
+      <Route path="/signup">
+        <SignupPage />
       </Route>
     </div>
   );
