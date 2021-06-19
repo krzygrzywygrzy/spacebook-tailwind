@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
+import useSearch from "../hooks/useSearch";
 import NavbarSearchResults from "./NavbarSearchResults";
 
 /**
@@ -16,6 +17,8 @@ const Navbar = () => {
     if (phrase.length > 2) setShowSearchResultsBox(true);
     else setShowSearchResultsBox(false);
   }, [phrase]);
+
+  const results = useSearch(phrase);
 
   //
   // searching and displaying search results - end
@@ -34,7 +37,7 @@ const Navbar = () => {
           value={phrase}
           onChange={(e) => setPhrase(e.target.value)}
         />
-        {showSearchResultsBox && <NavbarSearchResults />}
+        {showSearchResultsBox && <NavbarSearchResults results={results}/>}
       </div>
       <div className="flex justify-end">links</div>
     </div>
