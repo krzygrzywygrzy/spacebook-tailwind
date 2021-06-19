@@ -18,10 +18,10 @@ const ProfilePage = ({ id }) => {
   return (
     <div>
       <Navbar />
-      <div className="Profile mt-4 md:mt-8 2xl:mx-96  xl:mx-32 xl:px-32  sm:mx-8 md:px-16">
+      <div className="Profile  md:mt-8 2xl:mx-96  xl:mx-32 xl:px-32  sm:mx-8 md:px-16">
         {/* use info section */}
         <section className="flex md:flex-row flex-col justify-center md:justify-start md:space-x-16">
-          <div className="rounded-full bg-white border border-gray-200 md:h-44 md:w-44 h-32 w-32 mx-auto md:mx-px"></div>
+          <div className="rounded-full bg-white border border-gray-200 md:h-44 md:w-44 h-32 w-32 mx-auto md:mx-px md:my-0 my-4"></div>
           <div>
             <div>
               {res.status === "success" && res.data.user ? (

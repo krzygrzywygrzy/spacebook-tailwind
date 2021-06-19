@@ -25,8 +25,8 @@ const Navbar = () => {
   //
 
   return (
-    <div className="xl:px-96  py-2 bg-white border-b border-gray-200">
-      <div className="xl:mx-32  grid grid-cols-3">
+    <div className=" hidden md:block  py-2 bg-white border-b border-gray-200 md:px-24 xl:px-32 2xl:px-96">
+      <div className="xl:mx-32 grid grid-cols-3">
         <div>
           <Link href="/">spacebook</Link>
         </div>
