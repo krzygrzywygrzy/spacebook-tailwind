@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Cookies from "js-cookie";
 import { useLocation } from "wouter";
-import useGetHomePageData from "../hooks/useGetHomePageData";
+//import useGetHomePageData from "../hooks/useGetHomePageData";
 import Navbar from "../components/Navbar";
 
 /**
@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 const HomePage = () => {
   const [, setLocation] = useLocation();
 
-  useEffect(()=> document.title = "Spacebook | Home", []);
+  useEffect(() => (document.title = "Spacebook | Home"), []);
 
   //check if auth cookie is present, otherwise redirect to <LoginPage/>
   useEffect(() => {
@@ -21,7 +21,7 @@ const HomePage = () => {
   //const homePageData = useGetHomePageData();
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div>
       <Navbar />
     </div>
   );

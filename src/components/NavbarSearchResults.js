@@ -16,9 +16,11 @@ const NavbarSearchResults = ({ results }) => {
             <div>
               {results.result.map((item, index) => {
                 return (
-                  <div key={index} className="text-sm cursor-pointer hover:bg-gray-100 p-1">
-                    {item.fname} {item.surname}
-                  </div>
+                  <Link key={index} href={`/profile/${item._id}`}>
+                    <div className="text-sm cursor-pointer hover:bg-gray-100 p-1">
+                      {item.fname} {item.surname}
+                    </div>
+                  </Link>
                 );
               })}
             </div>

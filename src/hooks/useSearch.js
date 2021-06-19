@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { apiURL, contentType } from "../config";
 
@@ -11,6 +12,7 @@ const useSearch = (phrase) => {
           method: "POST",
           headers: {
             ...contentType,
+            Authorization: Cookies.get("authenticatedUser"),
           },
           body: JSON.stringify({ phrase }),
         });

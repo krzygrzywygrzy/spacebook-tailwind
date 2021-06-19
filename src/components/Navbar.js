@@ -37,7 +37,7 @@ const Navbar = () => {
           value={phrase}
           onChange={(e) => setPhrase(e.target.value)}
         />
-        {showSearchResultsBox && <NavbarSearchResults results={results}/>}
+        {showSearchResultsBox && <NavbarSearchResults results={results} />}
       </div>
       <div className="flex justify-end">links</div>
     </div>
