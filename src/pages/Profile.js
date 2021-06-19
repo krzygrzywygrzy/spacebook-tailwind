@@ -18,14 +18,14 @@ const ProfilePage = ({ id }) => {
   return (
     <div>
       <Navbar />
-      <div className="Profile mt-8 xl:mx-96 xl:px-32">
+      <div className="Profile mt-4 md:mt-8 2xl:mx-96  xl:mx-32 xl:px-32  sm:mx-8 md:px-16">
         {/* use info section */}
-        <section className="flex flex-row">
-          <div className="rounded-full bg-white border border-gray-200 h-44 w-44"></div>
-          <div className="xl:ml-32 lg:ml-24">
+        <section className="flex md:flex-row flex-col justify-center md:justify-start md:space-x-16">
+          <div className="rounded-full bg-white border border-gray-200 md:h-44 md:w-44 h-32 w-32 mx-auto md:mx-px"></div>
+          <div>
             <div>
               {res.status === "success" && res.data.user ? (
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start mt-4 md:mt-0">
                   <div className="text-xl font-thin">
                     {res.data.user.fname} {res.data.user.surname}
                   </div>
@@ -40,14 +40,20 @@ const ProfilePage = ({ id }) => {
                 </div>
               )}
               {res.status === "success" ? (
-                <div className="flex">
-                  <div className="mr-16"> posts: <span className="font-semibold">130</span></div>
-                  <div> friends: <span className="font-semibold">0</span></div>
+                <div className="flex md:justify-start justify-center">
+                  <div className="mr-16">
+                    {" "}
+                    posts: <span className="font-semibold">130</span>
+                  </div>
+                  <div>
+                    {" "}
+                    friends: <span className="font-semibold">0</span>
+                  </div>
                 </div>
               ) : (
                 <div className="flex flex-row mt-4">
                   <div className="bg-gray-300 rounded-md h-5 w-44"></div>
-                  <div className="bg-gray-300 rounded-md h-5 ml-1 w-36"></div>
+                  <div className="bg-gray-300 rounded-md h-5 ml-1 w-12"></div>
                   <div className="bg-gray-300 rounded-md h-5 ml-1 w-24"></div>
                 </div>
               )}
@@ -55,8 +61,8 @@ const ProfilePage = ({ id }) => {
           </div>
         </section>
         {/* posts section */}
-        <section className="mt-8">
-          <div className="border-b border-gray-200 text-center font-thin">Posts</div>
+        <section className="mt-8 px-4 md:p-0">
+          <div className=" border-b border-gray-200 text-center font-thin">Posts</div>
         </section>
       </div>
     </div>
