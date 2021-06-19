@@ -1,6 +1,6 @@
 import { Route } from "wouter";
-import HomePage from "./pages/home";
-import LoginPage from "./pages/login";
+import HomePage from "./pages/Home";
+import LoginPage from "./pages/Login";
 
 function App() {
   return (

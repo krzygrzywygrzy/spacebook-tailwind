@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
-import  Cookies  from "js-cookie";
+import Cookies from "js-cookie";
 
 /**
  * React FC that renders login page
